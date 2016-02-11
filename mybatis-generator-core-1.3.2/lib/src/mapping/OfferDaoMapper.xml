@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.OfferDaoMapper">
+  <resultMap id="BaseResultMap" type="model.OfferDao">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="commision" jdbcType="REAL" property="commision" />
+    <result column="sale_rate" jdbcType="TINYINT" property="saleRate" />
+    <result column="impression" jdbcType="INTEGER" property="impression" />
+    <result column="click" jdbcType="INTEGER" property="click" />
+    <result column="execute_time" jdbcType="INTEGER" property="executeTime" />
+    <result column="success_time" jdbcType="INTEGER" property="successTime" />
+    <result column="failed_time" jdbcType="INTEGER" property="failedTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, url, company, commision, sale_rate, impression, click, execute_time, success_time, 
+    failed_time, description, category
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from offer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from offer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="model.OfferDao">
+    insert into offer (id, name, url, 
+      company, commision, sale_rate, 
+      impression, click, execute_time, 
+      success_time, failed_time, description, 
+      category)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{commision,jdbcType=REAL}, #{saleRate,jdbcType=TINYINT}, 
+      #{impression,jdbcType=INTEGER}, #{click,jdbcType=INTEGER}, #{executeTime,jdbcType=INTEGER}, 
+      #{successTime,jdbcType=INTEGER}, #{failedTime,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{category,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.OfferDao">
+    insert into offer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="company != null">
+        company,
+      </if>
+      <if test="commision != null">
+        commision,
+      </if>
+      <if test="saleRate != null">
+        sale_rate,
+      </if>
+      <if test="impression != null">
+        impression,
+      </if>
+      <if test="click != null">
+        click,
+      </if>
+      <if test="executeTime != null">
+        execute_time,
+      </if>
+      <if test="successTime != null">
+        success_time,
+      </if>
+      <if test="failedTime != null">
+        failed_time,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="commision != null">
+        #{commision,jdbcType=REAL},
+      </if>
+      <if test="saleRate != null">
+        #{saleRate,jdbcType=TINYINT},
+      </if>
+      <if test="impression != null">
+        #{impression,jdbcType=INTEGER},
+      </if>
+      <if test="click != null">
+        #{click,jdbcType=INTEGER},
+      </if>
+      <if test="executeTime != null">
+        #{executeTime,jdbcType=INTEGER},
+      </if>
+      <if test="successTime != null">
+        #{successTime,jdbcType=INTEGER},
+      </if>
+      <if test="failedTime != null">
+        #{failedTime,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.OfferDao">
+    update offer
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="commision != null">
+        commision = #{commision,jdbcType=REAL},
+      </if>
+      <if test="saleRate != null">
+        sale_rate = #{saleRate,jdbcType=TINYINT},
+      </if>
+      <if test="impression != null">
+        impression = #{impression,jdbcType=INTEGER},
+      </if>
+      <if test="click != null">
+        click = #{click,jdbcType=INTEGER},
+      </if>
+      <if test="executeTime != null">
+        execute_time = #{executeTime,jdbcType=INTEGER},
+      </if>
+      <if test="successTime != null">
+        success_time = #{successTime,jdbcType=INTEGER},
+      </if>
+      <if test="failedTime != null">
+        failed_time = #{failedTime,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.OfferDao">
+    update offer
+    set name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      commision = #{commision,jdbcType=REAL},
+      sale_rate = #{saleRate,jdbcType=TINYINT},
+      impression = #{impression,jdbcType=INTEGER},
+      click = #{click,jdbcType=INTEGER},
+      execute_time = #{executeTime,jdbcType=INTEGER},
+      success_time = #{successTime,jdbcType=INTEGER},
+      failed_time = #{failedTime,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="model.OfferDao">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="commision" jdbcType="REAL" property="commision" />
+    <result column="sale_rate" jdbcType="TINYINT" property="saleRate" />
+    <result column="impression" jdbcType="INTEGER" property="impression" />
+    <result column="click" jdbcType="INTEGER" property="click" />
+    <result column="execute_time" jdbcType="INTEGER" property="executeTime" />
+    <result column="success_time" jdbcType="INTEGER" property="successTime" />
+    <result column="failed_time" jdbcType="INTEGER" property="failedTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, url, company, commision, sale_rate, impression, click, execute_time, success_time, 
+    failed_time, description, category
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from offer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from offer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="model.OfferDao">
+    insert into offer (id, name, url, 
+      company, commision, sale_rate, 
+      impression, click, execute_time, 
+      success_time, failed_time, description, 
+      category)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{commision,jdbcType=REAL}, #{saleRate,jdbcType=TINYINT}, 
+      #{impression,jdbcType=INTEGER}, #{click,jdbcType=INTEGER}, #{executeTime,jdbcType=INTEGER}, 
+      #{successTime,jdbcType=INTEGER}, #{failedTime,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{category,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.OfferDao">
+    insert into offer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="company != null">
+        company,
+      </if>
+      <if test="commision != null">
+        commision,
+      </if>
+      <if test="saleRate != null">
+        sale_rate,
+      </if>
+      <if test="impression != null">
+        impression,
+      </if>
+      <if test="click != null">
+        click,
+      </if>
+      <if test="executeTime != null">
+        execute_time,
+      </if>
+      <if test="successTime != null">
+        success_time,
+      </if>
+      <if test="failedTime != null">
+        failed_time,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="commision != null">
+        #{commision,jdbcType=REAL},
+      </if>
+      <if test="saleRate != null">
+        #{saleRate,jdbcType=TINYINT},
+      </if>
+      <if test="impression != null">
+        #{impression,jdbcType=INTEGER},
+      </if>
+      <if test="click != null">
+        #{click,jdbcType=INTEGER},
+      </if>
+      <if test="executeTime != null">
+        #{executeTime,jdbcType=INTEGER},
+      </if>
+      <if test="successTime != null">
+        #{successTime,jdbcType=INTEGER},
+      </if>
+      <if test="failedTime != null">
+        #{failedTime,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.OfferDao">
+    update offer
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="commision != null">
+        commision = #{commision,jdbcType=REAL},
+      </if>
+      <if test="saleRate != null">
+        sale_rate = #{saleRate,jdbcType=TINYINT},
+      </if>
+      <if test="impression != null">
+        impression = #{impression,jdbcType=INTEGER},
+      </if>
+      <if test="click != null">
+        click = #{click,jdbcType=INTEGER},
+      </if>
+      <if test="executeTime != null">
+        execute_time = #{executeTime,jdbcType=INTEGER},
+      </if>
+      <if test="successTime != null">
+        success_time = #{successTime,jdbcType=INTEGER},
+      </if>
+      <if test="failedTime != null">
+        failed_time = #{failedTime,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.OfferDao">
+    update offer
+    set name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      commision = #{commision,jdbcType=REAL},
+      sale_rate = #{saleRate,jdbcType=TINYINT},
+      impression = #{impression,jdbcType=INTEGER},
+      click = #{click,jdbcType=INTEGER},
+      execute_time = #{executeTime,jdbcType=INTEGER},
+      success_time = #{successTime,jdbcType=INTEGER},
+      failed_time = #{failedTime,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="model.OfferDao">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="commision" jdbcType="REAL" property="commision" />
+    <result column="sale_rate" jdbcType="TINYINT" property="saleRate" />
+    <result column="impression" jdbcType="INTEGER" property="impression" />
+    <result column="click" jdbcType="INTEGER" property="click" />
+    <result column="execute_time" jdbcType="INTEGER" property="executeTime" />
+    <result column="success_time" jdbcType="INTEGER" property="successTime" />
+    <result column="failed_time" jdbcType="INTEGER" property="failedTime" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, url, company, commision, sale_rate, impression, click, execute_time, success_time, 
+    failed_time, description, category
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from offer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+   <select id="selectAllOffers" resultMap="BaseResultMap">
+    select * from Offer;
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from offer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="model.OfferDao">
+    insert into offer (id, name, url, 
+      company, commision, sale_rate, 
+      impression, click, execute_time, 
+      success_time, failed_time, description, 
+      category)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{commision,jdbcType=REAL}, #{saleRate,jdbcType=TINYINT}, 
+      #{impression,jdbcType=INTEGER}, #{click,jdbcType=INTEGER}, #{executeTime,jdbcType=INTEGER}, 
+      #{successTime,jdbcType=INTEGER}, #{failedTime,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, 
+      #{category,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="model.OfferDao">
+    insert into offer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="company != null">
+        company,
+      </if>
+      <if test="commision != null">
+        commision,
+      </if>
+      <if test="saleRate != null">
+        sale_rate,
+      </if>
+      <if test="impression != null">
+        impression,
+      </if>
+      <if test="click != null">
+        click,
+      </if>
+      <if test="executeTime != null">
+        execute_time,
+      </if>
+      <if test="successTime != null">
+        success_time,
+      </if>
+      <if test="failedTime != null">
+        failed_time,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="commision != null">
+        #{commision,jdbcType=REAL},
+      </if>
+      <if test="saleRate != null">
+        #{saleRate,jdbcType=TINYINT},
+      </if>
+      <if test="impression != null">
+        #{impression,jdbcType=INTEGER},
+      </if>
+      <if test="click != null">
+        #{click,jdbcType=INTEGER},
+      </if>
+      <if test="executeTime != null">
+        #{executeTime,jdbcType=INTEGER},
+      </if>
+      <if test="successTime != null">
+        #{successTime,jdbcType=INTEGER},
+      </if>
+      <if test="failedTime != null">
+        #{failedTime,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.OfferDao">
+    update offer
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null">
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="commision != null">
+        commision = #{commision,jdbcType=REAL},
+      </if>
+      <if test="saleRate != null">
+        sale_rate = #{saleRate,jdbcType=TINYINT},
+      </if>
+      <if test="impression != null">
+        impression = #{impression,jdbcType=INTEGER},
+      </if>
+      <if test="click != null">
+        click = #{click,jdbcType=INTEGER},
+      </if>
+      <if test="executeTime != null">
+        execute_time = #{executeTime,jdbcType=INTEGER},
+      </if>
+      <if test="successTime != null">
+        success_time = #{successTime,jdbcType=INTEGER},
+      </if>
+      <if test="failedTime != null">
+        failed_time = #{failedTime,jdbcType=INTEGER},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.OfferDao">
+    update offer
+    set name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      commision = #{commision,jdbcType=REAL},
+      sale_rate = #{saleRate,jdbcType=TINYINT},
+      impression = #{impression,jdbcType=INTEGER},
+      click = #{click,jdbcType=INTEGER},
+      execute_time = #{executeTime,jdbcType=INTEGER},
+      success_time = #{successTime,jdbcType=INTEGER},
+      failed_time = #{failedTime,jdbcType=INTEGER},
+      description = #{description,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

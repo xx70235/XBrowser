@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.ProfileUsageDaoMapper" >
+  <resultMap id="BaseResultMap" type="model.ProfileUsageDao" >
+    <id column="offer_id" property="offerId" jdbcType="INTEGER" />
+    <result column="profile_id" property="profileId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    offer_id, profile_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from profile_usage
+    where offer_id = #{offerId,jdbcType=INTEGER}
+  </select>
+    <select id="selectByProfileIdAndOfferId" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from profile_usage
+    where offer_id = #{offerId,jdbcType=INTEGER} and profile_id = #{profileId, jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from profile_usage
+    where offer_id = #{offerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="model.ProfileUsageDao" >
+    insert into profile_usage (offer_id, profile_id)
+    values (#{offerId,jdbcType=INTEGER}, #{profileId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="model.ProfileUsageDao" >
+    insert into profile_usage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="offerId != null" >
+        offer_id,
+      </if>
+      <if test="profileId != null" >
+        profile_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="offerId != null" >
+        #{offerId,jdbcType=INTEGER},
+      </if>
+      <if test="profileId != null" >
+        #{profileId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.ProfileUsageDao" >
+    update profile_usage
+    <set >
+      <if test="profileId != null" >
+        profile_id = #{profileId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where offer_id = #{offerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.ProfileUsageDao" >
+    update profile_usage
+    set profile_id = #{profileId,jdbcType=INTEGER}
+    where offer_id = #{offerId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.ProxyUsageDaoMapper" >
+  <resultMap id="BaseResultMap" type="model.ProxyUsageDao" >
+    <result column="offer_id" property="offerId" jdbcType="INTEGER" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="use_time" property="useTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="model.ProxyUsageDao" >
+    insert into proxy_usage (offer_id, ip, use_time
+      )
+    values (#{offerId,jdbcType=INTEGER}, #{ip,jdbcType=VARCHAR}, #{useTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="model.ProxyUsageDao" >
+    insert into proxy_usage
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="offerId != null" >
+        offer_id,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="useTime != null" >
+        use_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="offerId != null" >
+        #{offerId,jdbcType=INTEGER},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="useTime != null" >
+        #{useTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
