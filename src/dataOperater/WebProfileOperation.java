@@ -85,8 +85,17 @@ public class WebProfileOperation extends WebOperation {
 
 	protected String selectADType(String ADFilePath, String adressFilePath) {
 		String responseString = "none";
-		// 广告页面标签地址
+		// 存有广告页面标签地址的数组
+		//其中广告页面标签分别为 Auto_Insurance    Auto_Motive   Credit_Card     Dating     Debt     Education      
+		// Entertainment     Gift    Health   Home     Insurance    Cash_Loans   Shopping_Coupons    Women    Other
+		// 可以用来匹配相应得网页url （后两个数组元素）
 		List<String> ADTypePair = new ArrayList<String>();
+		//  取得页面url的代码    int index =ADTypePair.indexOf("Auto_Insurance");
+		//String typeUrl = ADTypePair.get(index+1);
+		//String tableUrl = ADTypePair.get(index+2);
+		
+		
+		
 		// 美国城市及州地址
 		List<String> addressPair = new ArrayList<String>();
 		try {
