@@ -6,6 +6,8 @@ public class ProxyDao {
     private Integer id;
 
     private String ip;
+    
+    private int port;
 
     private String state;
 
@@ -29,7 +31,15 @@ public class ProxyDao {
         this.ip = ip == null ? null : ip.trim();
     }
 
-    public String getState() {
+    public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+	public String getState() {
         return state;
     }
 

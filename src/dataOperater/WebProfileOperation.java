@@ -139,6 +139,13 @@ public class WebProfileOperation extends WebOperation {
 		return responseString;
 	}
 
+	/**
+	 * 进入到资料页面，根据广告类别、proxy的州和城市进行资料的获取，将所有获取的资料存入本地数据库，并随机返回一条资料作为当前资料使用
+	 * @param category 
+	 * @param proxyState
+	 * @param proxyCity
+	 * @return
+	 */
 	public ProfileDao getProfileFromWeb(String category, String proxyState, String proxyCity) {
 		ProfileDao profileDao = null;
 		boolean isLoginOK = login("login.txt");
@@ -173,6 +180,21 @@ public class WebProfileOperation extends WebOperation {
 		return profileDao;
 	}
 
+	/**
+	 * 将从网站上获取的资料存入数据库
+	 * @param Email
+	 * @param FirstName
+	 * @param LastName
+	 * @param Gender
+	 * @param Adress
+	 * @param City
+	 * @param State
+	 * @param Postcode
+	 * @param PhoneNumber
+	 * @param SetLengend
+	 * @param category
+	 * @return
+	 */
 	private ProfileDao addProfile2DB(String Email, String FirstName, String LastName, String Gender, String Adress,
 			String City, String State, String Postcode, String PhoneNumber, String SetLengend, String category) {
 

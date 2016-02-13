@@ -53,6 +53,12 @@ public class LeadPrepare {
 //		this.profileUsage = profileUsage;
 //	}
 
+	/**
+	 * 通过offerPhone和proxy的ip在proxyusage表中查找该ip是否做过该广告，用过返回true，没用过返回false
+	 * @param offerid
+	 * @param proxyIp
+	 * @return
+	 */
 	private boolean isIpUsed(int offerid, String proxyIp) {
 		// 通过offerPhone和proxy的ip在proxyusage表中查找该ip是否做过该广告，用过返回true，没用过返回false
 
@@ -76,6 +82,16 @@ public class LeadPrepare {
 		}
 	}
 
+	/**
+	 * 根据当前offer的id，类别，当前代理的州和城市获取资料profile，分为两步：
+	 * 1.首先查找db中是否有符合广告类型和代理地址的资料，并且该资料不能在该广告中用过（查profile_usage表），如果有，返回该资料
+	 * 2.如果数据库中没有符合要求的资料，则从网站上取,将其页面所有的资料均放入数据库,取完之后放入profile数据库
+	 * @param offerId 当前offer的id
+	 * @param offerCategory 当前offer的类别
+	 * @param proxyState 当前代理的州
+	 * @param proxyCity 当前代理的城市
+	 * @return
+	 */
 	private ProfileDao getProfileByOfferCategoryAndProxyAddr(int offerId, String offerCategory, String proxyState,
 			String proxyCity) {
 		// 首先查找db中是否有符合广告类型和代理地址的资料，并且该资料不能在该广告中用过（查profile_usage表），
@@ -96,7 +112,7 @@ public class LeadPrepare {
 		}
 
 		
-		// 如果数据库中没有符合要求的资料，则从网站上取,将其页面所有的资料均放入数据库,根据许冬的代码实现。
+		// 如果数据库中没有符合要求的资料，则从网站上取,将其页面所有的资料均放入数据库
 		// 取完之后放入profile数据库
 		
 		WebProfileOperation webProfileOperation = new WebProfileOperation();
@@ -105,6 +121,12 @@ public class LeadPrepare {
 		return profileDao;
 	}
 
+	/**
+	 * 判断当前的资料profile是否在当前offer中使用过（查询profileusage表）
+	 * @param profileId
+	 * @param offerId
+	 * @return 
+	 */
 	private boolean isfProfileUsed(int profileId, int offerId) {
 		SqlSession session = sqlSessionFactory.openSession();
 		try {
@@ -122,6 +144,14 @@ public class LeadPrepare {
 		}
 	}
 
+	/**
+	 * 通过当前offer和当前代理的情况获取资料profile，分为两个步骤:
+	 * 1.验证代理是否已在当前offer上使用过，如果使用过则返回null，
+	 * 2.根据广告类型（category）和代理的州地址城市地址获取资料profile
+	 * @param offer 当前offer
+	 * @param proxy 当前代理
+	 * @return
+	 */
 	public ProfileDao prepare(OfferDao offer, ProxyDao proxy) {
 		// 验证代理是否用过
 
