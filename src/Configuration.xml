@@ -23,5 +23,6 @@
         <mapper resource="mapping/ProxyUsageDaoMapper.xml"/>
         <mapper resource="mapping/ProfileDaoMapper.xml"/>
         <mapper resource="mapping/ProfileUsageDaoMapper.xml"/>
+         <mapper resource="mapping/DbipLookupDaoMapper.xml"/>
     </mappers>
     </configuration>
