@@ -1,12 +1,16 @@
 package dataOperater;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.URL;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.log4j.Logger;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Proxy;
 
@@ -31,7 +35,7 @@ public class LeadPrepare {
 
 	private static SqlSessionFactory sqlSessionFactory;
 	private static Reader reader;
-
+	private final Logger logger = Logger.getLogger(LeadPrepare.class);
 	static {
 		try {
 			reader = Resources.getResourceAsReader("Configuration.xml");
@@ -67,9 +71,8 @@ public class LeadPrepare {
 			ProxyUsageDaoMapper proxyUsageOperation = session.getMapper(ProxyUsageDaoMapper.class);
 			List<ProxyUsageDao> proxyUsageList = proxyUsageOperation.selectByOfferIdAndProxyIp(offerid,proxyIp);
 			for (ProxyUsageDao proxyUsage : proxyUsageList) {
-				System.out.println(proxyUsage.getIp());
-				System.out.println(proxyUsage.getOfferId().toString());
-				System.out.println(proxyUsage.getUseTime().toString());
+				logger.info("当前代理已做过该广告: "+proxyUsage.getIp()+"---"+proxyUsage.getOfferId()+"---"+proxyUsage.getUseTime());
+				
 			}
 			if (!proxyUsageList.isEmpty())
 				return true;
@@ -114,7 +117,6 @@ public class LeadPrepare {
 		
 		// 如果数据库中没有符合要求的资料，则从网站上取,将其页面所有的资料均放入数据库
 		// 取完之后放入profile数据库
-		
 		WebProfileOperation webProfileOperation = new WebProfileOperation();
 		ProfileDao profileDao = webProfileOperation.getProfileFromWeb(offerCategory, proxyState, proxyCity);
 		
@@ -143,6 +145,37 @@ public class LeadPrepare {
 			session.close();
 		}
 	}
+	
+	/**
+	 * 通过网站返回参数得到当前的ip地址（适用于使用VPN或直连时）
+	 * @return
+	 */
+	public String getIp()
+	{
+		URL myIP;
+		 try 
+	        {
+	            myIP = new URL("http://myip.dnsomatic.com/");
+
+	            BufferedReader in = new BufferedReader(
+	                    new InputStreamReader(myIP.openStream())
+	                    );
+	            return in.readLine();
+	        } catch (Exception e1) 
+	        {
+	            try {
+	                myIP = new URL("http://icanhazip.com/");
+
+	                BufferedReader in = new BufferedReader(
+	                        new InputStreamReader(myIP.openStream())
+	                        );
+	                return in.readLine();
+	            } catch (Exception e2) {
+	                e2.printStackTrace(); 
+	            }
+	        }
+		 return null;
+	}
 
 	/**
 	 * 通过当前offer和当前代理的情况获取资料profile，分为两个步骤:
@@ -156,7 +189,7 @@ public class LeadPrepare {
 		// 验证代理是否用过
 
 		if (isIpUsed(offer.getId(), proxy.getIp())) {
-			System.out.println("当前代理"+proxy.getIp()+"已做过广告"+offer.getName()+"。");
+			logger.info("当前代理"+proxy.getIp()+"已做过广告"+offer.getName()+"。");
 			return null;
 		} else {
 			return getProfileByOfferCategoryAndProxyAddr(offer.getId(), offer.getCategory(), proxy.getState(),

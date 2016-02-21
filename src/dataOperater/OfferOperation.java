@@ -35,6 +35,7 @@ public class OfferOperation {
             List<OfferDao> offerList = offerOperation.selectByOfferName(name);
             for(OfferDao offer : offerList)
             {
+            	
                 System.out.println(offer.getId());
                 System.out.println(offer.getName());
                 System.out.println(offer.getUrl());

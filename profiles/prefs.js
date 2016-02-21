@@ -159,6 +159,7 @@ user_pref("media.gmp-eme-adobe.version", "15");
 user_pref("media.gmp-gmpopenh264.abi", "x86-msvc-x64");
 user_pref("media.gmp-gmpopenh264.lastUpdate", 1455358511);
 user_pref("media.gmp-gmpopenh264.version", "1.5.3");
+user_pref("media.peerconnection.enabled", false);
 user_pref("media.gmp-manager.buildID", "20160210153822");
 user_pref("media.gmp-manager.lastCheck", 1455374745);
 user_pref("media.hardware-video-decoding.failed", false);

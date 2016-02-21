@@ -83,7 +83,7 @@ public class WebProfileOperation extends WebOperation {
 
 	}
 
-	protected String selectADType(String ADFilePath, String adressFilePath) {
+	protected String selectADType(String ADFilePath, String state, String city) {
 		String responseString = "none";
 		// 存有广告页面标签地址的数组
 		//其中广告页面标签分别为 Auto_Insurance    Auto_Motive   Credit_Card     Dating     Debt     Education      
@@ -91,23 +91,13 @@ public class WebProfileOperation extends WebOperation {
 		// 可以用来匹配相应得网页url （后两个数组元素）
 		List<String> ADTypePair = new ArrayList<String>();
 		//  取得页面url的代码    int index =ADTypePair.indexOf("Auto_Insurance");
-		//String typeUrl = ADTypePair.get(index+1);
-		//String tableUrl = ADTypePair.get(index+2);
-		
-		
-		
 		// 美国城市及州地址
 		List<String> addressPair = new ArrayList<String>();
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File(ADFilePath)));
-			BufferedReader bt = new BufferedReader(new FileReader(new File(adressFilePath)));
 			String line;
-			String line2;
 			while ((line = br.readLine()) != null) {
 				ADTypePair.add(line);
-			}
-			while ((line2 = bt.readLine()) != null) {
-				addressPair.add(line2);
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -117,8 +107,8 @@ public class WebProfileOperation extends WebOperation {
 		String typeName = ADTypePair.get(0);
 		String typeUrl = ADTypePair.get(1);
 		String tableUrl = ADTypePair.get(2);
-		String cityKey = addressPair.get(0);
-		String stateKey = addressPair.get(1);
+		String cityKey = state;
+		String stateKey = city;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		nvps.add(new BasicNameValuePair("cityKey", cityKey));
 		nvps.add(new BasicNameValuePair("stateKey", stateKey));
@@ -160,7 +150,7 @@ public class WebProfileOperation extends WebOperation {
 		boolean isLoginOK = login("login.txt");
 		if (isLoginOK) {
 			// 进资料页面
-			String tableString = selectADType("ADType.txt", "adress.txt");
+			String tableString = selectADType("ADType.txt",proxyState,proxyCity);
 			System.out.println(tableString);
 			// 取资料下来并存入数据库
 			Document doc = Jsoup.parse(tableString);
