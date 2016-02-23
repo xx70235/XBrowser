@@ -9,7 +9,9 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.apache.http.HeaderIterator;
@@ -21,6 +23,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
@@ -51,91 +54,20 @@ public class WebProfileOperation extends WebOperation {
 		}
 	}
 
-	protected boolean postData(List<NameValuePair> nvps, String url) {
-		HttpPost httpPost = new HttpPost(url);
-		try {
-			httpPost.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
-			HttpResponse response = httpClient.execute(httpPost);
-			HttpEntity entity = response.getEntity();
-			EntityUtils.consume(entity);
-			cookies = ((DefaultHttpClient) httpClient).getCookieStore().getCookies();
 
-			if (cookies.isEmpty()) {
-				System.out.println("None");
-				return false;
-			} else {
-
-				for (int i = 0; i < cookies.size(); i++) {
-					System.out.println("- " + cookies.get(i).toString());
-				}
-				return true;
-			}
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-			return false;
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-			return false;
-		} catch (IOException e) {
-			e.printStackTrace();
-			return false;
-		}
-
-	}
-
-	protected String selectADType(String ADFilePath, String state, String city) {
-		String responseString = "none";
-		// 存有广告页面标签地址的数组
-		//其中广告页面标签分别为 Auto_Insurance    Auto_Motive   Credit_Card     Dating     Debt     Education      
-		// Entertainment     Gift    Health   Home     Insurance    Cash_Loans   Shopping_Coupons    Women    Other
-		// 可以用来匹配相应得网页url （后两个数组元素）
-		List<String> ADTypePair = new ArrayList<String>();
-		//  取得页面url的代码    int index =ADTypePair.indexOf("Auto_Insurance");
-		// 美国城市及州地址
-		List<String> addressPair = new ArrayList<String>();
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(new File(ADFilePath)));
-			String line;
-			while ((line = br.readLine()) != null) {
-				ADTypePair.add(line);
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		String typeName = ADTypePair.get(0);
-		String typeUrl = ADTypePair.get(1);
-		String tableUrl = ADTypePair.get(2);
-		String cityKey = state;
-		String stateKey = city;
+	protected String webProfileQuery(String category, String state, String city) {
+		String queryUrl = generateQueryUrl(category);
+		String resultUrl = generateResultUrl(category);
+		String cityKey = city;
+		String stateKey = state;
 		List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 		nvps.add(new BasicNameValuePair("cityKey", cityKey));
 		nvps.add(new BasicNameValuePair("stateKey", stateKey));
 
-		try {
-			HttpPost httppost = new HttpPost(typeUrl);
-			httppost.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
-			HttpResponse response = httpClient.execute(httppost);
-			// 销毁连接
-			HttpEntity entity = response.getEntity();
-			EntityUtils.consume(entity);
-			// 请求表格页面
-			HttpPost httppost1 = new HttpPost(tableUrl);
-			HttpResponse response1 = httpClient.execute(httppost1);
-			HttpEntity entity1 = response1.getEntity();
-			// 得到表格页面
-			responseString = EntityUtils.toString(entity1, "GBK");
-			EntityUtils.consume(entity1);
+		String queryPageResult = getInfo(queryUrl);
+		String queryResult = postData(nvps, resultUrl,"GBK");
 
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return responseString;
+		return queryResult;
 	}
 
 	/**
@@ -150,7 +82,7 @@ public class WebProfileOperation extends WebOperation {
 		boolean isLoginOK = login("login.txt");
 		if (isLoginOK) {
 			// 进资料页面
-			String tableString = selectADType("ADType.txt",proxyState,proxyCity);
+			String tableString = webProfileQuery(category,proxyState,proxyCity);
 			System.out.println(tableString);
 			// 取资料下来并存入数据库
 			Document doc = Jsoup.parse(tableString);
@@ -177,6 +109,56 @@ public class WebProfileOperation extends WebOperation {
 			}
 		}
 		return profileDao;
+	}
+	
+	private String generateQueryUrl(String category)
+	{
+		if(category.contains(" "))
+			category = category.replace(" ", "_").toLowerCase();
+		String url ="";
+		//Cash_Loans
+		if(category.contains("cash"))
+		{
+			url = "http://italku.com/search_loans.asp";
+		}
+		//Shopping_Coupons
+		else if(category.contains("shopping"))
+		{
+			url = "http://italku.com/search_shopping.asp";
+		}
+		else if(category.contains("credit"))
+		{
+			url = "http://italku.com/search_credit.asp";
+		}
+		else {
+			url = "http://italku.com/search_"+category+".asp";
+		}
+		 return url;
+	}
+	
+	private String generateResultUrl(String category)
+	{
+		if(category.contains(" "))
+			category = category.replace(" ", "_").toLowerCase();
+		String url ="";
+		//Cash_Loans
+		if(category.contains("cash"))
+		{
+			url = "http://italku.com/loans.asp";
+		}
+		//Shopping_Coupons
+		else if(category.contains("shopping"))
+		{
+			url = "http://italku.com/shopping.asp";
+		}
+		else if(category.contains("credit"))
+		{
+			url = "http://italku.com/credit.asp";
+		}
+		else {
+			url = "http://italku.com/"+category+".asp";
+		}
+		 return url;
 	}
 
 	/**
@@ -229,7 +211,7 @@ public class WebProfileOperation extends WebOperation {
 		String tableString;
 
 		WebProfileOperation operation = new WebProfileOperation();
-		ProfileDao profileDao = operation.getProfileFromWeb("Insurance", "NY", "New york");
+		ProfileDao profileDao = operation.getProfileFromWeb("Auto Insurance", "NY", "New york");
 		System.out.println(profileDao.getPhone());
 	}
 

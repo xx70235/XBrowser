@@ -1,5 +1,7 @@
 package model;
 
+import javax.management.loading.PrivateClassLoader;
+
 public class ProfileDao {
     private Integer id;
 
@@ -22,6 +24,8 @@ public class ProfileDao {
     private String city;
 
     private String zipcode;
+    
+
 
     public Integer getId() {
         return id;
@@ -110,4 +114,5 @@ public class ProfileDao {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode == null ? null : zipcode.trim();
     }
+
 }

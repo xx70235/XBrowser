@@ -35,6 +35,14 @@ public class BrowserOperation {
 	ArrayList<String> alList;
 	ArrayList<String> agentList;
 	private final Logger logger = Logger.getLogger(BrowserOperation.class);
+	public WebDriver getDriver() {
+		return driver;
+	}
+
+	public void setDriver(WebDriver driver) {
+		this.driver = driver;
+	}
+
 	/**
 	 * 初始化浏览器，包括读取火狐浏览器的profiles、设置语言、设置useragent。
 	 */
@@ -53,7 +61,7 @@ public class BrowserOperation {
 	 * 
 	 * @throws Exception
 	 */
-	public void openBrowser() throws Exception {
+	public void openBrowser() {
 		showCurrentTime("开始初始化");
 		initial();
 		setProxy();
@@ -64,7 +72,7 @@ public class BrowserOperation {
 		// driver.manage().timeouts().implicitlyWait(300, TimeUnit.SECONDS);
 	}
 
-	public void openBrowser(ProxyDao proxyDao) throws Exception {
+	public void openBrowser(ProxyDao proxyDao) {
 		showCurrentTime("开始初始化");
 		initial();
 		setProxy(proxyDao);
@@ -156,7 +164,7 @@ public class BrowserOperation {
 
 	/**
 	 * 打开url，如果150秒内未代开，则中断线程，并返回false
-	 * 
+	 * 同时若3次打开页面都显示unable to connect或 The proxy server is refusing connections，则说明代理已死，返回false
 	 * @param url
 	 */
 	public boolean openUrl(final String url) {
@@ -184,14 +192,16 @@ public class BrowserOperation {
 				return false;
 			}
 			showCurrentTime("打开网页完毕");
+			//
+			//判断当前打开的页面是否包含Unable to connect，如果是则说明当前代理失
 			String tmp = driver.findElement(By.tagName("body")).getText();
-			if (tmp.contains("Unable to connect")) {
+			if (tmp.contains("Unable to connect")||tmp.contains("The proxy server is refusing connections")) {
 				isOpenSuccess = false;
 				openTime++;
 			}
 		} while (!isOpenSuccess&&openTime<3);
-
-		return true;
+		
+		return isOpenSuccess;
 	}
 
 	/**
@@ -220,27 +230,27 @@ public class BrowserOperation {
 	 * @param profileDao
 	 * @return
 	 */
-	public boolean executeOffer(OfferDao offerDao, ProfileDao profileDao) {
-		try {
-			boolean executionSuccess = true;
-			this.openBrowser();
-			// 必须要加上http协议或https协议，否则会抛出错误：http://stackoverflow.com/questions/22145776/selenium-org-openqa-selenium-webdriverexception-f-queryinterface-is-not-a-fun
-			executionSuccess = this.openUrl(offerDao.getUrl());
-			if (!executionSuccess) {
-				logger.info("代理失效，请更换代理，重新运行程序");
-				this.closeBrowser();
-				return false;
-			} else {
-				this.closeBrowser();
-				return true;
-			}
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
+//	public boolean executeOffer(OfferDao offerDao, ProfileDao profileDao) {
+//		try {
+//			boolean executionSuccess = true;
+//			this.openBrowser();
+//			// 必须要加上http协议或https协议，否则会抛出错误：http://stackoverflow.com/questions/22145776/selenium-org-openqa-selenium-webdriverexception-f-queryinterface-is-not-a-fun
+//			executionSuccess = this.openUrl(offerDao.getUrl());
+//			if (!executionSuccess) {
+//				logger.info("代理失效，请更换代理，重新运行程序");
+//				this.closeBrowser();
+//				return false;
+//			} else {
+//				this.closeBrowser();
+//				return true;
+//			}
+//
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return false;
+//	}
 
 	/**
 	 * 通过网站返回参数得到当前的ip地址（适用于使用程序设置代理情况，如小猪代理）
@@ -251,25 +261,21 @@ public class BrowserOperation {
 		try {
 			boolean executionSuccess = true;
 			this.openBrowser();
+			
 			// 必须要加上http协议或https协议，否则会抛出错误：http://stackoverflow.com/questions/22145776/selenium-org-openqa-selenium-webdriverexception-f-queryinterface-is-not-a-fun
 			executionSuccess = this.openUrl("http://myip.dnsomatic.com/");
 			String myIP = driver.findElement(By.tagName("body")).getText();
 			if (!executionSuccess) {
 				//代理失效，请更换代理，重新运行程序
-				this.closeBrowser();
 				throw new ProxyDiedException();
-//				return null;
 			} else {
-				this.closeBrowser();
+				//this.closeBrowser();
 				return myIP;
 			}
 
 		} catch (NoSuchElementException e1) {
 			e1.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		}  
 		return null;
 	}
 

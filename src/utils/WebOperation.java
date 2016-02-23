@@ -50,8 +50,6 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import utils.MD5;
-
 public class WebOperation {
 
 	
@@ -103,6 +101,29 @@ public class WebOperation {
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
+		}
+
+	}
+	
+	protected String postData(List<NameValuePair> nvps, String url, String charSet) {
+		HttpPost httpPost = new HttpPost(url);
+		try {
+			httpPost.setEntity(new UrlEncodedFormEntity(nvps, HTTP.UTF_8));
+			HttpResponse response = httpClient.execute(httpPost);
+			HttpEntity entity = response.getEntity();
+			// 得到表格页面
+			String responseString = EntityUtils.toString(entity, charSet);
+			EntityUtils.consume(entity);
+			return responseString;
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			return null;
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
 		}
 
 	}

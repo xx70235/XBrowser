@@ -3,7 +3,9 @@ package dataOperater;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -19,11 +21,14 @@ import dao.ProfileDaoMapper;
 import dao.ProfileUsageDaoMapper;
 import dao.ProxyDaoMapper;
 import dao.ProxyUsageDaoMapper;
+import main.BrowserOperation;
+import model.DbipLookupDao;
 import model.OfferDao;
 import model.ProfileDao;
 import model.ProfileUsageDao;
 import model.ProxyDao;
 import model.ProxyUsageDao;
+import utils.ProxyDiedException;
 
 public class LeadPrepare {
 
@@ -48,6 +53,35 @@ public class LeadPrepare {
 	public LeadPrepare()
 	{
 		
+	}
+	
+	/**
+	 * 通过浏览器打开网页获得当前的代理（只有通过小猪代理才需要这样做），然后查表得到代理的州和城市
+	 * @param browserOperation
+	 * @return 返回代理对象
+	 * @throws ProxyDiedException
+	 * @throws UnknownHostException
+	 */
+	public ProxyDao prepareProxy(BrowserOperation browserOperation) throws ProxyDiedException, UnknownHostException
+	{
+		// 获得当前proxy的ip地址
+		String proxyIp = browserOperation.getIp();
+
+		// 根据当前的proxy的ip初始化proxyDao
+		ProxyDao proxyDao = new ProxyDao();
+		proxyDao.setIp(proxyIp);
+
+		// 通过查询数据库得出proxy的所在州和城市
+		// 通过ip得到InetAddress对象，ip库查询时需要
+		InetAddress proxyInetAddress = InetAddress.getByName(proxyDao.getIp());
+
+		// 查找InetAddress对象的地址
+		DbipLookupDao dbipLookupDao = ProxyLookup.getAddressByIp(proxyInetAddress);
+
+		// 将地址写入到ProxyDao对象
+		proxyDao.setState(dbipLookupDao.getStateprov());
+		proxyDao.setCity(dbipLookupDao.getCity());
+		return proxyDao;
 	}
 	
 //	public LeadPrepare(OfferDao offer, ProxyUsageDao proxyUsage, ProfileDao profile, ProfileUsageDao profileUsage) {
@@ -115,12 +149,26 @@ public class LeadPrepare {
 		}
 
 		
-		// 如果数据库中没有符合要求的资料，则从网站上取,将其页面所有的资料均放入数据库
-		// 取完之后放入profile数据库
-		WebProfileOperation webProfileOperation = new WebProfileOperation();
-		ProfileDao profileDao = webProfileOperation.getProfileFromWeb(offerCategory, proxyState, proxyCity);
+		ProfileDao profileDao = getProfileFromWeb(offerCategory, proxyState, proxyCity);
 		
 		return profileDao;
+	}
+	
+	/**
+	 * 如果数据库中没有符合要求的资料，则从网站上取,将其页面所有的资料均放入数据库
+	 * 取完之后放入profile数据库
+	 * @param offerCategory
+	 * @param proxyState
+	 * @param proxyCity
+	 * @return
+	 */
+	private ProfileDao getProfileFromWeb(String offerCategory, String proxyState,
+			String proxyCity)
+	{
+		
+				WebProfileOperation webProfileOperation = new WebProfileOperation();
+				ProfileDao profileDao = webProfileOperation.getProfileFromWeb(offerCategory, proxyState, proxyCity);
+				return profileDao;
 	}
 
 	/**
@@ -186,23 +234,26 @@ public class LeadPrepare {
 	 * @return
 	 */
 	public ProfileDao prepare(OfferDao offer, ProxyDao proxy) {
+		
 		// 验证代理是否用过
-
 		if (isIpUsed(offer.getId(), proxy.getIp())) {
 			logger.info("当前代理"+proxy.getIp()+"已做过广告"+offer.getName()+"。");
 			return null;
-		} else {
+		} 
+		
+		// 根据广告类型和代理地址取资料
+		else {
 			return getProfileByOfferCategoryAndProxyAddr(offer.getId(), offer.getCategory(), proxy.getState(),
 					proxy.getCity());
 		}
 
-		// 根据广告类型和代理地址取资料
+		
 	}
 
 	public static void main(String[] args) {
 		
 		OfferDao offer = new OfferDao();
-		offer.setCategory("insurance");
+		offer.setCategory("dating");
 		offer.setId(1);
 		offer.setUrl("www.click.com");
 		
@@ -214,6 +265,7 @@ public class LeadPrepare {
 		
 		LeadPrepare leadPrepare  = new LeadPrepare();
 		leadPrepare.prepare(offer, proxy);
+		leadPrepare.getProfileFromWeb(offer.getCategory(), proxy.getState(), proxy.getCity());
 
 	}
 }

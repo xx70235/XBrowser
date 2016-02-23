@@ -2,3 +2,6 @@
 /dataOperater/
 /log4j.properties
 /utils/
+/model/
+/action/
+/offerOperater/
