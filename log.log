@@ -1,0 +1,329 @@
+2016-02-20 23:24:18  [ main:0 ] - [ INFO ]  2016-02-20 23:24:18--开始初始化
+2016-02-20 23:24:19  [ main:96 ] - [ INFO ]  2016-02-20 23:24:19--开始打开浏览器
+2016-02-20 23:24:25  [ http://myip.dnsomatic.com/:6732 ] - [ INFO ]  2016-02-20 23:24:25--开始打开网页
+2016-02-20 23:24:25  [ main:6942 ] - [ INFO ]  2016-02-20 23:24:25--打开网页完毕
+2016-02-20 23:24:26  [ http://myip.dnsomatic.com/:7107 ] - [ INFO ]  2016-02-20 23:24:26--开始打开网页
+2016-02-20 23:24:26  [ main:7219 ] - [ INFO ]  2016-02-20 23:24:26--打开网页完毕
+2016-02-20 23:24:26  [ http://myip.dnsomatic.com/:7359 ] - [ INFO ]  2016-02-20 23:24:26--开始打开网页
+2016-02-20 23:24:26  [ main:7451 ] - [ INFO ]  2016-02-20 23:24:26--打开网页完毕
+2016-02-20 23:24:26  [ http://myip.dnsomatic.com/:7566 ] - [ INFO ]  2016-02-20 23:24:26--开始打开网页
+2016-02-20 23:24:26  [ main:7668 ] - [ INFO ]  2016-02-20 23:24:26--打开网页完毕
+2016-02-20 23:24:26  [ http://myip.dnsomatic.com/:7779 ] - [ INFO ]  2016-02-20 23:24:26--开始打开网页
+2016-02-20 23:24:26  [ main:7901 ] - [ INFO ]  2016-02-20 23:24:26--打开网页完毕
+2016-02-20 23:24:26  [ http://myip.dnsomatic.com/:8007 ] - [ INFO ]  2016-02-20 23:24:26--开始打开网页
+2016-02-20 23:24:27  [ main:8134 ] - [ INFO ]  2016-02-20 23:24:27--打开网页完毕
+2016-02-20 23:24:27  [ http://myip.dnsomatic.com/:8243 ] - [ INFO ]  2016-02-20 23:24:27--开始打开网页
+2016-02-20 23:24:27  [ main:8372 ] - [ INFO ]  2016-02-20 23:24:27--打开网页完毕
+2016-02-20 23:24:27  [ http://myip.dnsomatic.com/:8489 ] - [ INFO ]  2016-02-20 23:24:27--开始打开网页
+2016-02-20 23:24:27  [ main:8630 ] - [ INFO ]  2016-02-20 23:24:27--打开网页完毕
+2016-02-20 23:24:27  [ http://myip.dnsomatic.com/:8786 ] - [ INFO ]  2016-02-20 23:24:27--开始打开网页
+2016-02-20 23:24:27  [ main:8923 ] - [ INFO ]  2016-02-20 23:24:27--打开网页完毕
+2016-02-20 23:24:28  [ http://myip.dnsomatic.com/:9037 ] - [ INFO ]  2016-02-20 23:24:28--开始打开网页
+2016-02-20 23:24:28  [ main:9137 ] - [ INFO ]  2016-02-20 23:24:28--打开网页完毕
+2016-02-20 23:24:28  [ main:9328 ] - [ INFO ]  2016-02-20 23:24:28--关闭浏览器
+2016-02-20 23:24:29  [ main:10056 ] - [ INFO ]  2016-02-20 23:24:29--完成关闭浏览器
+2016-02-20 23:24:29  [ main:10057 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-20 23:24:29  [ main:10058 ] - [ INFO ]  2016-02-20 23:24:29--开始初始化
+2016-02-20 23:24:29  [ main:10062 ] - [ INFO ]  2016-02-20 23:24:29--开始打开浏览器
+2016-02-20 23:24:34  [ http://myip.dnsomatic.com/:15895 ] - [ INFO ]  2016-02-20 23:24:34--开始打开网页
+2016-02-20 23:24:35  [ main:16087 ] - [ INFO ]  2016-02-20 23:24:35--打开网页完毕
+2016-02-20 23:24:35  [ http://myip.dnsomatic.com/:16330 ] - [ INFO ]  2016-02-20 23:24:35--开始打开网页
+2016-02-20 23:24:35  [ main:16472 ] - [ INFO ]  2016-02-20 23:24:35--打开网页完毕
+2016-02-20 23:24:35  [ http://myip.dnsomatic.com/:16617 ] - [ INFO ]  2016-02-20 23:24:35--开始打开网页
+2016-02-20 23:24:35  [ main:16731 ] - [ INFO ]  2016-02-20 23:24:35--打开网页完毕
+2016-02-20 23:24:35  [ http://myip.dnsomatic.com/:16873 ] - [ INFO ]  2016-02-20 23:24:35--开始打开网页
+2016-02-20 23:24:35  [ main:17003 ] - [ INFO ]  2016-02-20 23:24:35--打开网页完毕
+2016-02-20 23:24:36  [ http://myip.dnsomatic.com/:17152 ] - [ INFO ]  2016-02-20 23:24:36--开始打开网页
+2016-02-20 23:24:36  [ main:17266 ] - [ INFO ]  2016-02-20 23:24:36--打开网页完毕
+2016-02-20 23:24:36  [ http://myip.dnsomatic.com/:17428 ] - [ INFO ]  2016-02-20 23:24:36--开始打开网页
+2016-02-20 23:24:36  [ main:17563 ] - [ INFO ]  2016-02-20 23:24:36--打开网页完毕
+2016-02-20 23:24:36  [ http://myip.dnsomatic.com/:17702 ] - [ INFO ]  2016-02-20 23:24:36--开始打开网页
+2016-02-20 23:24:36  [ main:17799 ] - [ INFO ]  2016-02-20 23:24:36--打开网页完毕
+2016-02-20 23:24:36  [ http://myip.dnsomatic.com/:17908 ] - [ INFO ]  2016-02-20 23:24:36--开始打开网页
+2016-02-20 23:24:36  [ main:18007 ] - [ INFO ]  2016-02-20 23:24:36--打开网页完毕
+2016-02-20 23:24:37  [ http://myip.dnsomatic.com/:18124 ] - [ INFO ]  2016-02-20 23:24:37--开始打开网页
+2016-02-20 23:24:37  [ main:18242 ] - [ INFO ]  2016-02-20 23:24:37--打开网页完毕
+2016-02-20 23:24:37  [ http://myip.dnsomatic.com/:18344 ] - [ INFO ]  2016-02-20 23:24:37--开始打开网页
+2016-02-20 23:24:37  [ main:18453 ] - [ INFO ]  2016-02-20 23:24:37--打开网页完毕
+2016-02-20 23:24:37  [ main:18633 ] - [ INFO ]  2016-02-20 23:24:37--关闭浏览器
+2016-02-20 23:24:38  [ main:19242 ] - [ INFO ]  2016-02-20 23:24:38--完成关闭浏览器
+2016-02-20 23:24:38  [ main:19242 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-20 23:24:38  [ main:19242 ] - [ INFO ]  2016-02-20 23:24:38--开始初始化
+2016-02-20 23:24:38  [ main:19246 ] - [ INFO ]  2016-02-20 23:24:38--开始打开浏览器
+2016-02-20 23:24:43  [ http://myip.dnsomatic.com/:24864 ] - [ INFO ]  2016-02-20 23:24:43--开始打开网页
+2016-02-20 23:24:44  [ main:25023 ] - [ INFO ]  2016-02-20 23:24:44--打开网页完毕
+2016-02-20 23:24:44  [ http://myip.dnsomatic.com/:25192 ] - [ INFO ]  2016-02-20 23:24:44--开始打开网页
+2016-02-20 23:24:44  [ main:25316 ] - [ INFO ]  2016-02-20 23:24:44--打开网页完毕
+2016-02-20 23:24:44  [ http://myip.dnsomatic.com/:25439 ] - [ INFO ]  2016-02-20 23:24:44--开始打开网页
+2016-02-20 23:24:44  [ main:25532 ] - [ INFO ]  2016-02-20 23:24:44--打开网页完毕
+2016-02-20 23:24:44  [ http://myip.dnsomatic.com/:25653 ] - [ INFO ]  2016-02-20 23:24:44--开始打开网页
+2016-02-20 23:24:44  [ main:25751 ] - [ INFO ]  2016-02-20 23:24:44--打开网页完毕
+2016-02-20 23:24:44  [ http://myip.dnsomatic.com/:25863 ] - [ INFO ]  2016-02-20 23:24:44--开始打开网页
+2016-02-20 23:24:44  [ main:25956 ] - [ INFO ]  2016-02-20 23:24:44--打开网页完毕
+2016-02-20 23:24:45  [ http://myip.dnsomatic.com/:26074 ] - [ INFO ]  2016-02-20 23:24:45--开始打开网页
+2016-02-20 23:24:45  [ main:26190 ] - [ INFO ]  2016-02-20 23:24:45--打开网页完毕
+2016-02-20 23:24:45  [ http://myip.dnsomatic.com/:26296 ] - [ INFO ]  2016-02-20 23:24:45--开始打开网页
+2016-02-20 23:24:45  [ main:26405 ] - [ INFO ]  2016-02-20 23:24:45--打开网页完毕
+2016-02-20 23:24:45  [ http://myip.dnsomatic.com/:26524 ] - [ INFO ]  2016-02-20 23:24:45--开始打开网页
+2016-02-20 23:24:45  [ main:26668 ] - [ INFO ]  2016-02-20 23:24:45--打开网页完毕
+2016-02-20 23:24:45  [ http://myip.dnsomatic.com/:26805 ] - [ INFO ]  2016-02-20 23:24:45--开始打开网页
+2016-02-20 23:24:45  [ main:26897 ] - [ INFO ]  2016-02-20 23:24:45--打开网页完毕
+2016-02-20 23:24:45  [ http://myip.dnsomatic.com/:27014 ] - [ INFO ]  2016-02-20 23:24:45--开始打开网页
+2016-02-20 23:24:46  [ main:27118 ] - [ INFO ]  2016-02-20 23:24:46--打开网页完毕
+2016-02-20 23:24:46  [ main:27328 ] - [ INFO ]  2016-02-20 23:24:46--关闭浏览器
+2016-02-20 23:24:46  [ main:27921 ] - [ INFO ]  2016-02-20 23:24:46--完成关闭浏览器
+2016-02-20 23:24:46  [ main:27921 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-20 23:24:46  [ main:27922 ] - [ INFO ]  2016-02-20 23:24:46--开始初始化
+2016-02-20 23:24:46  [ main:27926 ] - [ INFO ]  2016-02-20 23:24:46--开始打开浏览器
+2016-02-20 23:24:52  [ http://myip.dnsomatic.com/:33602 ] - [ INFO ]  2016-02-20 23:24:52--开始打开网页
+2016-02-20 23:24:52  [ main:33763 ] - [ INFO ]  2016-02-20 23:24:52--打开网页完毕
+2016-02-20 23:24:52  [ http://myip.dnsomatic.com/:33932 ] - [ INFO ]  2016-02-20 23:24:52--开始打开网页
+2016-02-20 23:24:53  [ main:34036 ] - [ INFO ]  2016-02-20 23:24:53--打开网页完毕
+2016-02-20 23:24:53  [ http://myip.dnsomatic.com/:34149 ] - [ INFO ]  2016-02-20 23:24:53--开始打开网页
+2016-02-20 23:24:53  [ main:34234 ] - [ INFO ]  2016-02-20 23:24:53--打开网页完毕
+2016-02-20 23:24:53  [ http://myip.dnsomatic.com/:34354 ] - [ INFO ]  2016-02-20 23:24:53--开始打开网页
+2016-02-20 23:24:53  [ main:34454 ] - [ INFO ]  2016-02-20 23:24:53--打开网页完毕
+2016-02-20 23:24:53  [ http://myip.dnsomatic.com/:34581 ] - [ INFO ]  2016-02-20 23:24:53--开始打开网页
+2016-02-20 23:24:53  [ main:34690 ] - [ INFO ]  2016-02-20 23:24:53--打开网页完毕
+2016-02-20 23:24:53  [ http://myip.dnsomatic.com/:34803 ] - [ INFO ]  2016-02-20 23:24:53--开始打开网页
+2016-02-20 23:24:53  [ main:34926 ] - [ INFO ]  2016-02-20 23:24:53--打开网页完毕
+2016-02-20 23:24:54  [ http://myip.dnsomatic.com/:35043 ] - [ INFO ]  2016-02-20 23:24:54--开始打开网页
+2016-02-20 23:24:54  [ main:35142 ] - [ INFO ]  2016-02-20 23:24:54--打开网页完毕
+2016-02-20 23:24:54  [ http://myip.dnsomatic.com/:35272 ] - [ INFO ]  2016-02-20 23:24:54--开始打开网页
+2016-02-20 23:24:54  [ main:35485 ] - [ INFO ]  2016-02-20 23:24:54--打开网页完毕
+2016-02-20 23:24:54  [ http://myip.dnsomatic.com/:35610 ] - [ INFO ]  2016-02-20 23:24:54--开始打开网页
+2016-02-20 23:24:54  [ main:35778 ] - [ INFO ]  2016-02-20 23:24:54--打开网页完毕
+2016-02-20 23:24:54  [ http://myip.dnsomatic.com/:35920 ] - [ INFO ]  2016-02-20 23:24:54--开始打开网页
+2016-02-20 23:24:54  [ main:36018 ] - [ INFO ]  2016-02-20 23:24:54--打开网页完毕
+2016-02-20 23:24:55  [ main:36210 ] - [ INFO ]  2016-02-20 23:24:55--关闭浏览器
+2016-02-20 23:24:55  [ main:36813 ] - [ INFO ]  2016-02-20 23:24:55--完成关闭浏览器
+2016-02-20 23:24:55  [ main:36813 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-20 23:24:55  [ main:36813 ] - [ INFO ]  2016-02-20 23:24:55--开始初始化
+2016-02-20 23:24:55  [ main:36817 ] - [ INFO ]  2016-02-20 23:24:55--开始打开浏览器
+2016-02-20 23:27:38  [ main:0 ] - [ INFO ]  2016-02-20 23:27:38--开始初始化
+2016-02-20 23:27:38  [ main:74 ] - [ INFO ]  2016-02-20 23:27:38--开始打开浏览器
+2016-02-20 23:27:45  [ http://myip.dnsomatic.com/:6541 ] - [ INFO ]  2016-02-20 23:27:45--开始打开网页
+2016-02-20 23:27:45  [ main:6742 ] - [ INFO ]  2016-02-20 23:27:45--打开网页完毕
+2016-02-20 23:27:45  [ http://myip.dnsomatic.com/:6901 ] - [ INFO ]  2016-02-20 23:27:45--开始打开网页
+2016-02-20 23:27:45  [ main:7012 ] - [ INFO ]  2016-02-20 23:27:45--打开网页完毕
+2016-02-20 23:27:45  [ http://myip.dnsomatic.com/:7125 ] - [ INFO ]  2016-02-20 23:27:45--开始打开网页
+2016-02-20 23:27:45  [ main:7212 ] - [ INFO ]  2016-02-20 23:27:45--打开网页完毕
+2016-02-20 23:27:46  [ main:7416 ] - [ INFO ]  2016-02-20 23:27:46--关闭浏览器
+2016-02-20 23:27:46  [ main:8132 ] - [ INFO ]  2016-02-20 23:27:46--完成关闭浏览器
+2016-02-20 23:27:46  [ main:8133 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry AgainUnable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-20 23:27:46  [ main:8133 ] - [ INFO ]  2016-02-20 23:27:46--开始初始化
+2016-02-20 23:27:46  [ main:8140 ] - [ INFO ]  2016-02-20 23:27:46--开始打开浏览器
+2016-02-20 23:27:52  [ http://myip.dnsomatic.com/:13721 ] - [ INFO ]  2016-02-20 23:27:52--开始打开网页
+2016-02-20 23:27:52  [ main:13922 ] - [ INFO ]  2016-02-20 23:27:52--打开网页完毕
+2016-02-20 23:27:52  [ http://myip.dnsomatic.com/:14094 ] - [ INFO ]  2016-02-20 23:27:52--开始打开网页
+2016-02-20 23:27:52  [ main:14211 ] - [ INFO ]  2016-02-20 23:27:52--打开网页完毕
+2016-02-20 23:27:52  [ http://myip.dnsomatic.com/:14323 ] - [ INFO ]  2016-02-20 23:27:52--开始打开网页
+2016-02-20 23:27:53  [ main:14411 ] - [ INFO ]  2016-02-20 23:27:53--打开网页完毕
+2016-02-20 23:27:53  [ main:14604 ] - [ INFO ]  2016-02-20 23:27:53--关闭浏览器
+2016-02-20 23:27:53  [ main:15207 ] - [ INFO ]  2016-02-20 23:27:53--完成关闭浏览器
+2016-02-20 23:27:53  [ main:15208 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry AgainUnable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-20 23:27:53  [ main:15208 ] - [ INFO ]  2016-02-20 23:27:53--开始初始化
+2016-02-20 23:27:53  [ main:15212 ] - [ INFO ]  2016-02-20 23:27:53--开始打开浏览器
+2016-02-21 10:09:46  [ main:0 ] - [ INFO ]  2016-02-21 10:09:46--开始初始化
+2016-02-21 10:09:46  [ main:76 ] - [ INFO ]  2016-02-21 10:09:46--开始打开浏览器
+2016-02-21 10:09:53  [ http://myip.dnsomatic.com/:7039 ] - [ INFO ]  2016-02-21 10:09:53--开始打开网页
+2016-02-21 10:09:53  [ main:7255 ] - [ INFO ]  2016-02-21 10:09:53--打开网页完毕
+2016-02-21 10:09:53  [ http://myip.dnsomatic.com/:7425 ] - [ INFO ]  2016-02-21 10:09:53--开始打开网页
+2016-02-21 10:09:54  [ main:7531 ] - [ INFO ]  2016-02-21 10:09:54--打开网页完毕
+2016-02-21 10:09:54  [ http://myip.dnsomatic.com/:7666 ] - [ INFO ]  2016-02-21 10:09:54--开始打开网页
+2016-02-21 10:09:54  [ main:7768 ] - [ INFO ]  2016-02-21 10:09:54--打开网页完毕
+2016-02-21 10:09:54  [ main:7952 ] - [ INFO ]  2016-02-21 10:09:54--关闭浏览器
+2016-02-21 10:09:55  [ main:8706 ] - [ INFO ]  2016-02-21 10:09:55--完成关闭浏览器
+2016-02-21 10:09:55  [ main:8707 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry AgainUnable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-21 10:09:55  [ main:8708 ] - [ INFO ]  2016-02-21 10:09:55--开始初始化
+2016-02-21 10:09:55  [ main:8714 ] - [ INFO ]  2016-02-21 10:09:55--开始打开浏览器
+2016-02-21 10:10:00  [ http://myip.dnsomatic.com/:14324 ] - [ INFO ]  2016-02-21 10:10:00--开始打开网页
+2016-02-21 10:10:00  [ main:14487 ] - [ INFO ]  2016-02-21 10:10:00--打开网页完毕
+2016-02-21 10:10:01  [ http://myip.dnsomatic.com/:14647 ] - [ INFO ]  2016-02-21 10:10:01--开始打开网页
+2016-02-21 10:10:01  [ main:14760 ] - [ INFO ]  2016-02-21 10:10:01--打开网页完毕
+2016-02-21 10:10:01  [ http://myip.dnsomatic.com/:14881 ] - [ INFO ]  2016-02-21 10:10:01--开始打开网页
+2016-02-21 10:10:01  [ main:14980 ] - [ INFO ]  2016-02-21 10:10:01--打开网页完毕
+2016-02-21 10:10:01  [ main:15195 ] - [ INFO ]  2016-02-21 10:10:01--关闭浏览器
+2016-02-21 10:10:02  [ main:15802 ] - [ INFO ]  2016-02-21 10:10:02--完成关闭浏览器
+2016-02-21 10:10:02  [ main:15803 ] - [ ERROR ]  Unable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry AgainUnable to connect
+Firefox can't establish a connection to the server at myip.dnsomatic.com.
+The site could be temporarily unavailable or too busy. Try again in a few moments.
+If you are unable to load any pages, check your computer's network connection.
+If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the Web.
+Open HomepageTry Again
+2016-02-21 10:10:02  [ main:15803 ] - [ INFO ]  2016-02-21 10:10:02--开始初始化
+2016-02-21 10:10:02  [ main:15808 ] - [ INFO ]  2016-02-21 10:10:02--开始打开浏览器
+2016-02-21 15:57:57  [ main:0 ] - [ INFO ]  2016-02-21 15:57:57--开始初始化
+2016-02-21 15:57:57  [ main:133 ] - [ INFO ]  2016-02-21 15:57:57--开始打开浏览器
+2016-02-21 15:58:07  [ http://myip.dnsomatic.com/:10629 ] - [ INFO ]  2016-02-21 15:58:07--开始打开网页
+2016-02-21 15:58:15  [ main:18620 ] - [ INFO ]  2016-02-21 15:58:15--打开网页完毕
+2016-02-21 15:58:15  [ main:18763 ] - [ INFO ]  2016-02-21 15:58:15--关闭浏览器
+2016-02-21 15:58:20  [ main:23007 ] - [ INFO ]  2016-02-21 15:58:20--完成关闭浏览器
+2016-02-21 15:58:22  [ main:25092 ] - [ INFO ]  2016-02-21 15:58:22--开始初始化
+2016-02-21 15:58:22  [ main:25100 ] - [ INFO ]  2016-02-21 15:58:22--开始打开浏览器
+2016-02-21 15:58:28  [ http://www.nobsads.net/click.track?CID=264595&AFID=313405&ADID=1062933&SID=:31262 ] - [ INFO ]  2016-02-21 15:58:28--开始打开网页
+2016-02-21 15:59:39  [ main:102389 ] - [ INFO ]  2016-02-21 15:59:39--打开网页完毕
+2016-02-21 15:59:39  [ main:102580 ] - [ INFO ]  2016-02-21 15:59:39--关闭浏览器
+2016-02-21 15:59:40  [ main:103235 ] - [ INFO ]  2016-02-21 15:59:40--完成关闭浏览器
+2016-02-21 15:59:40  [ main:103235 ] - [ INFO ]  2016-02-21 15:59:40--开始初始化
+2016-02-21 15:59:40  [ main:103241 ] - [ INFO ]  2016-02-21 15:59:40--开始打开浏览器
+2016-02-21 15:59:46  [ http://myip.dnsomatic.com/:109490 ] - [ INFO ]  2016-02-21 15:59:46--开始打开网页
+2016-02-21 15:59:49  [ main:112742 ] - [ INFO ]  2016-02-21 15:59:49--打开网页完毕
+2016-02-21 15:59:50  [ main:112972 ] - [ INFO ]  2016-02-21 15:59:50--关闭浏览器
+2016-02-21 15:59:50  [ main:113576 ] - [ INFO ]  2016-02-21 15:59:50--完成关闭浏览器
+2016-02-21 15:59:50  [ main:113576 ] - [ ERROR ]  The proxy server is refusing connections
+Firefox is configured to use a proxy server that is refusing connections.
+Check the proxy settings to make sure that they are correct.
+Contact your network administrator to make sure the proxy server is working.
+Open HomepageTry AgainThe proxy server is refusing connections
+Firefox is configured to use a proxy server that is refusing connections.
+Check the proxy settings to make sure that they are correct.
+Contact your network administrator to make sure the proxy server is working.
+Open HomepageTry Again
+2016-02-21 15:59:50  [ main:113577 ] - [ INFO ]  2016-02-21 15:59:50--开始初始化
+2016-02-21 15:59:50  [ main:113581 ] - [ INFO ]  2016-02-21 15:59:50--开始打开浏览器
+2016-02-21 15:59:56  [ http://myip.dnsomatic.com/:119545 ] - [ INFO ]  2016-02-21 15:59:56--开始打开网页
+2016-02-21 15:59:58  [ main:121733 ] - [ INFO ]  2016-02-21 15:59:58--打开网页完毕
+2016-02-21 15:59:59  [ main:121951 ] - [ INFO ]  2016-02-21 15:59:59--关闭浏览器
+2016-02-21 15:59:59  [ main:122573 ] - [ INFO ]  2016-02-21 15:59:59--完成关闭浏览器
+2016-02-21 15:59:59  [ main:122573 ] - [ ERROR ]  The proxy server is refusing connections
+Firefox is configured to use a proxy server that is refusing connections.
+Check the proxy settings to make sure that they are correct.
+Contact your network administrator to make sure the proxy server is working.
+Open HomepageTry AgainThe proxy server is refusing connections
+Firefox is configured to use a proxy server that is refusing connections.
+Check the proxy settings to make sure that they are correct.
+Contact your network administrator to make sure the proxy server is working.
+Open HomepageTry Again
+2016-02-21 15:59:59  [ main:122574 ] - [ INFO ]  2016-02-21 15:59:59--开始初始化
+2016-02-21 15:59:59  [ main:122577 ] - [ INFO ]  2016-02-21 15:59:59--开始打开浏览器
+2016-02-21 16:00:05  [ http://myip.dnsomatic.com/:128558 ] - [ INFO ]  2016-02-21 16:00:05--开始打开网页
+2016-02-21 16:00:07  [ main:130743 ] - [ INFO ]  2016-02-21 16:00:07--打开网页完毕
+2016-02-21 16:00:08  [ main:130964 ] - [ INFO ]  2016-02-21 16:00:08--关闭浏览器
+2016-02-21 16:00:08  [ main:131605 ] - [ INFO ]  2016-02-21 16:00:08--完成关闭浏览器
+2016-02-21 16:00:08  [ main:131606 ] - [ ERROR ]  The proxy server is refusing connections
+Firefox is configured to use a proxy server that is refusing connections.
+Check the proxy settings to make sure that they are correct.
+Contact your network administrator to make sure the proxy server is working.
+Open HomepageTry AgainThe proxy server is refusing connections
+Firefox is configured to use a proxy server that is refusing connections.
+Check the proxy settings to make sure that they are correct.
+Contact your network administrator to make sure the proxy server is working.
+Open HomepageTry Again
+2016-02-21 16:00:08  [ main:131606 ] - [ INFO ]  2016-02-21 16:00:08--开始初始化
+2016-02-21 16:00:08  [ main:131610 ] - [ INFO ]  2016-02-21 16:00:08--开始打开浏览器
+2016-02-21 16:26:39  [ main:0 ] - [ INFO ]  2016-02-21 16:26:39--开始初始化
+2016-02-21 16:26:39  [ main:197 ] - [ INFO ]  2016-02-21 16:26:39--开始打开浏览器
+2016-02-21 16:26:51  [ http://myip.dnsomatic.com/:12372 ] - [ INFO ]  2016-02-21 16:26:51--开始打开网页
+2016-02-21 16:26:54  [ main:15635 ] - [ INFO ]  2016-02-21 16:26:54--打开网页完毕
+2016-02-21 16:26:54  [ http://myip.dnsomatic.com/:15779 ] - [ INFO ]  2016-02-21 16:26:54--开始打开网页
+2016-02-21 16:26:55  [ main:15819 ] - [ INFO ]  2016-02-21 16:26:55--打开网页完毕
+2016-02-21 16:31:06  [ main:0 ] - [ INFO ]  2016-02-21 16:31:06--开始初始化
+2016-02-21 16:31:06  [ main:129 ] - [ INFO ]  2016-02-21 16:31:06--开始打开浏览器
+2016-02-21 16:31:18  [ http://myip.dnsomatic.com/:11943 ] - [ INFO ]  2016-02-21 16:31:18--开始打开网页
+2016-02-21 16:31:20  [ main:14196 ] - [ INFO ]  2016-02-21 16:31:20--打开网页完毕
+2016-02-21 16:31:20  [ http://myip.dnsomatic.com/:14373 ] - [ INFO ]  2016-02-21 16:31:20--开始打开网页
+2016-02-21 16:31:21  [ main:14420 ] - [ INFO ]  2016-02-21 16:31:21--打开网页完毕
+2016-02-21 16:32:11  [ main:1 ] - [ INFO ]  2016-02-21 16:32:11--开始初始化
+2016-02-21 16:32:12  [ main:156 ] - [ INFO ]  2016-02-21 16:32:12--开始打开浏览器
+2016-02-21 16:32:42  [ http://myip.dnsomatic.com/:30939 ] - [ INFO ]  2016-02-21 16:32:42--开始打开网页
+2016-02-21 16:32:56  [ main:44748 ] - [ INFO ]  2016-02-21 16:32:56--打开网页完毕
+2016-02-21 16:33:15  [ http://myip.dnsomatic.com/:64097 ] - [ INFO ]  2016-02-21 16:33:15--开始打开网页
+2016-02-21 16:33:23  [ main:71933 ] - [ INFO ]  2016-02-21 16:33:23--打开网页完毕
+2016-02-21 16:33:28  [ http://myip.dnsomatic.com/:76771 ] - [ INFO ]  2016-02-21 16:33:28--开始打开网页
+2016-02-21 16:33:33  [ main:81870 ] - [ INFO ]  2016-02-21 16:33:33--打开网页完毕
+2016-02-21 16:38:35  [ main:0 ] - [ INFO ]  2016-02-21 16:38:35--开始初始化
+2016-02-21 16:38:35  [ main:127 ] - [ INFO ]  2016-02-21 16:38:35--开始打开浏览器
+2016-02-21 16:38:45  [ http://myip.dnsomatic.com/:10269 ] - [ INFO ]  2016-02-21 16:38:45--开始打开网页
+2016-02-21 16:38:47  [ main:11646 ] - [ INFO ]  2016-02-21 16:38:47--打开网页完毕
+2016-02-21 16:38:47  [ http://myip.dnsomatic.com/:11793 ] - [ INFO ]  2016-02-21 16:38:47--开始打开网页
+2016-02-21 16:38:47  [ main:11834 ] - [ INFO ]  2016-02-21 16:38:47--打开网页完毕
+2016-02-21 16:38:48  [ http://myip.dnsomatic.com/:13004 ] - [ INFO ]  2016-02-21 16:38:48--开始打开网页
+2016-02-21 16:38:48  [ main:13050 ] - [ INFO ]  2016-02-21 16:38:48--打开网页完毕
+2016-02-21 16:39:09  [ main:33890 ] - [ INFO ]  当前代理失效，请更换代理
+2016-02-21 16:39:10  [ main:34801 ] - [ INFO ]  2016-02-21 16:39:10--关闭浏览器
+2016-02-21 16:39:11  [ main:35830 ] - [ INFO ]  2016-02-21 16:39:11--完成关闭浏览器
+2016-02-21 16:39:59  [ main:0 ] - [ INFO ]  2016-02-21 16:39:59--开始初始化
+2016-02-21 16:39:59  [ main:79 ] - [ INFO ]  2016-02-21 16:39:59--开始打开浏览器
+2016-02-21 16:40:06  [ http://myip.dnsomatic.com/:6881 ] - [ INFO ]  2016-02-21 16:40:06--开始打开网页
+2016-02-21 16:40:09  [ main:10101 ] - [ INFO ]  2016-02-21 16:40:09--打开网页完毕
+2016-02-21 16:40:10  [ http://myip.dnsomatic.com/:10247 ] - [ INFO ]  2016-02-21 16:40:10--开始打开网页
+2016-02-21 16:40:10  [ main:10285 ] - [ INFO ]  2016-02-21 16:40:10--打开网页完毕
+2016-02-21 16:40:11  [ http://myip.dnsomatic.com/:11440 ] - [ INFO ]  2016-02-21 16:40:11--开始打开网页
+2016-02-21 16:40:11  [ main:11483 ] - [ INFO ]  2016-02-21 16:40:11--打开网页完毕
+2016-02-21 16:40:12  [ main:12714 ] - [ INFO ]  当前代理失效，请更换代理
+2016-02-21 16:40:12  [ main:12715 ] - [ INFO ]  2016-02-21 16:40:12--关闭浏览器
+2016-02-21 16:40:13  [ main:13468 ] - [ INFO ]  2016-02-21 16:40:13--完成关闭浏览器
+2016-02-21 16:46:40  [ main:0 ] - [ INFO ]  2016-02-21 16:46:40--开始初始化
+2016-02-21 16:46:41  [ main:129 ] - [ INFO ]  2016-02-21 16:46:41--开始打开浏览器
+2016-02-21 16:46:58  [ http://myip.dnsomatic.com/:17608 ] - [ INFO ]  2016-02-21 16:46:58--开始打开网页
+2016-02-21 16:47:01  [ main:20365 ] - [ INFO ]  2016-02-21 16:47:01--打开网页完毕
+2016-02-21 16:47:16  [ main:35299 ] - [ INFO ]  2016-02-21 16:47:16--关闭浏览器
+2016-02-21 16:47:17  [ main:36329 ] - [ INFO ]  2016-02-21 16:47:17--完成关闭浏览器
+2016-02-21 16:50:35  [ main:0 ] - [ INFO ]  2016-02-21 16:50:35--开始初始化
+2016-02-21 16:50:35  [ main:118 ] - [ INFO ]  2016-02-21 16:50:35--开始打开浏览器
+2016-02-21 16:50:44  [ http://myip.dnsomatic.com/:8968 ] - [ INFO ]  2016-02-21 16:50:44--开始打开网页
+2016-02-21 16:50:46  [ main:11136 ] - [ INFO ]  2016-02-21 16:50:46--打开网页完毕
+2016-02-21 16:50:58  [ main:22830 ] - [ INFO ]  2016-02-21 16:50:58--关闭浏览器
+2016-02-21 16:50:59  [ main:23763 ] - [ INFO ]  2016-02-21 16:50:59--完成关闭浏览器
+2016-02-21 17:06:12  [ main:0 ] - [ INFO ]  2016-02-21 17:06:12--开始初始化
+2016-02-21 17:06:12  [ main:138 ] - [ INFO ]  2016-02-21 17:06:12--开始打开浏览器
+2016-02-21 17:06:23  [ http://myip.dnsomatic.com/:10738 ] - [ INFO ]  2016-02-21 17:06:23--开始打开网页
+2016-02-21 17:06:30  [ main:17972 ] - [ INFO ]  2016-02-21 17:06:30--打开网页完毕
+2016-02-21 17:06:38  [ main:25709 ] - [ INFO ]  2016-02-21 17:06:38--关闭浏览器
+2016-02-21 17:06:39  [ main:26767 ] - [ INFO ]  2016-02-21 17:06:39--完成关闭浏览器

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.DbipLookupDaoMapper" >
+  <resultMap id="BaseResultMap" type="model.DbipLookupDao" >
+    <id column="ip_start" property="ipStart" jdbcType="VARBINARY" />
+    <result column="addr_type" property="addrType" jdbcType="CHAR" />
+    <result column="country" property="country" jdbcType="CHAR" />
+    <result column="stateprov" property="stateprov" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="model.DbipLookupDao" extends="BaseResultMap" >
+    <result column="ip_end" property="ipEnd" jdbcType="VARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ip_start, addr_type, country, stateprov, city
+  </sql>
+  <sql id="Blob_Column_List" >
+    ip_end
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="byte[]" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dbip_lookup
+    where ip_start = #{ipStart,jdbcType=VARBINARY}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="byte[]" >
+    delete from dbip_lookup
+    where ip_start = #{ipStart,jdbcType=VARBINARY}
+  </delete>
+  <insert id="insert" parameterType="model.DbipLookupDao" >
+    insert into dbip_lookup (ip_start, addr_type, country, 
+      stateprov, city, ip_end
+      )
+    values (#{ipStart,jdbcType=VARBINARY}, #{addrType,jdbcType=CHAR}, #{country,jdbcType=CHAR}, 
+      #{stateprov,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{ipEnd,jdbcType=VARBINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="model.DbipLookupDao" >
+    insert into dbip_lookup
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ipStart != null" >
+        ip_start,
+      </if>
+      <if test="addrType != null" >
+        addr_type,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="stateprov != null" >
+        stateprov,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="ipEnd != null" >
+        ip_end,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ipStart != null" >
+        #{ipStart,jdbcType=VARBINARY},
+      </if>
+      <if test="addrType != null" >
+        #{addrType,jdbcType=CHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=CHAR},
+      </if>
+      <if test="stateprov != null" >
+        #{stateprov,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="ipEnd != null" >
+        #{ipEnd,jdbcType=VARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="model.DbipLookupDao" >
+    update dbip_lookup
+    <set >
+      <if test="addrType != null" >
+        addr_type = #{addrType,jdbcType=CHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=CHAR},
+      </if>
+      <if test="stateprov != null" >
+        stateprov = #{stateprov,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="ipEnd != null" >
+        ip_end = #{ipEnd,jdbcType=VARBINARY},
+      </if>
+    </set>
+    where ip_start = #{ipStart,jdbcType=VARBINARY}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="model.DbipLookupDao" >
+    update dbip_lookup
+    set addr_type = #{addrType,jdbcType=CHAR},
+      country = #{country,jdbcType=CHAR},
+      stateprov = #{stateprov,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      ip_end = #{ipEnd,jdbcType=VARBINARY}
+    where ip_start = #{ipStart,jdbcType=VARBINARY}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="model.DbipLookupDao" >
+    update dbip_lookup
+    set addr_type = #{addrType,jdbcType=CHAR},
+      country = #{country,jdbcType=CHAR},
+      stateprov = #{stateprov,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR}
+    where ip_start = #{ipStart,jdbcType=VARBINARY}
+  </update>
+</mapper>
