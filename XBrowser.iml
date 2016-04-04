@@ -53,6 +53,16 @@
     <libelement value="jar://$MODULE_DIR$/libs/xalan-2.7.2.jar!/" />
     <libelement value="jar://$MODULE_DIR$/libs/xercesImpl-2.11.0.jar!/" />
     <libelement value="jar://$MODULE_DIR$/libs/xml-apis-1.4.01.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/asm-4.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/cglib-3.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/log4j-1.2.17.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/log4j-api-2.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/log4j-core-2.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/mybatis-3.3.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/mysql-connector-java-5.0.8-bin.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/slf4j-api-1.7.12.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/slf4j-log4j12-1.7.12.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/libs/jsoup-1.8.3.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -64,7 +74,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="JavaSE-1.6" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="apache-mime4j-0.6.jar">
         <CLASSES>
@@ -498,24 +508,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/asm-4.2.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/cglib-3.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/log4j-1.2.17.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/log4j-api-2.2.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/log4j-core-2.2.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/mybatis-3.3.0.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/slf4j-api-1.7.12.jar!/" />
-          <root url="jar://$MODULE_DIR$/libs/slf4j-log4j12-1.7.12.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/libs/selenium-java-2.49.0-srcs.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="websocket-common-9.2.13.v20150730.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/websocket-common-9.2.13.v20150730.jar!/" />
@@ -552,9 +544,90 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library>
+      <library name="asm-4.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/asm-4.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cglib-3.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/cglib-3.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="log4j-1.2.17.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/log4j-1.2.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="log4j-api-2.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/log4j-api-2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="log4j-core-2.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/log4j-core-2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mybatis-3.3.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/mybatis-3.3.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mysql-connector-java-5.0.8-bin.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/libs/mysql-connector-java-5.0.8-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-api-1.7.12.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/slf4j-api-1.7.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-log4j12-1.7.12.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/slf4j-log4j12-1.7.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jsoup-1.8.3.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/jsoup-1.8.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
